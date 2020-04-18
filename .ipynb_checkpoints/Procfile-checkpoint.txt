@@ -1,1 +1,1 @@
-web: gunicorn polar-mountain-03758:app
+web: gunicorn polar-mountain-03758.wsgi --log-file -
