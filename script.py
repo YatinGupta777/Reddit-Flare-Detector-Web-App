@@ -16,7 +16,6 @@ from sklearn.preprocessing import LabelEncoder
 from werkzeug.utils import secure_filename
 from flask import jsonify
 
-
 set(stopwords.words('english'))
 ps = PorterStemmer() 
 emoji_pattern = re.compile("["
