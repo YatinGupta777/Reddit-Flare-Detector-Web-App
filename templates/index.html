@@ -9,23 +9,35 @@
 </head>
 <style type="text/css">
 
-.main_body{
+body{
+	background-image: url("reddit-flare-detector.jpg");
+	background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    color: white;
+}
+.jumbotron{
+	background-color: #000000;
 	margin-top: 10%;
-	margin-left: 5%;
+}
+#prediction{
+	font-size: 200%;
+}
 }
 </style>
 <body>
-<div class="container main_body">
-	<h3>Flare Prediction</h3>
+<div class="jumbotron text-center">
+	<h1>Reddit Flair Detector</h1>
 	<p>[ Enter a link to Reddit post (preferably r/india) to predict a flare for it ]</p>
 	<div>
 	  <form action="/index" method="POST">
-	  	 <label>Enter Reddit Link</label>
+	  	 <label>Enter Link to a Reddit Post</label>
     	<input type="text" class="form-control" name="text">
 	    <br>
 	    <input type="submit" value="Submit">
 	  </form>
-	  Predicted Flare : <mark>{{prediction}}</mark>
+	  <br>
+	  Predicted Flare : <mark id="prediction">{{prediction}}</mark>
 	</div>
 
 </div>
