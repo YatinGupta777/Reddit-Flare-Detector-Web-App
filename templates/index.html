@@ -23,6 +23,13 @@ img{
 	height: 70px;
 	width: 70px;
 }
+#flares mark{
+	background-color: #d6d0d0;
+	
+}
+#error{
+	color: red;
+}
 }
 </style>
 <body>
@@ -37,10 +44,15 @@ img{
 	    <input type="submit" value="Submit">
 	  </form>
 	  <br>
+	  {% if error %}
+	  <p id="error">{{error}}</p>
+	  {% else %}
 	  Predicted Flare : <mark id="prediction">{{prediction}}</mark>
+	  {% endif %}
 	  <br>
+
 	  <br>
-	<p>Available flares : <mark>Politics</mark>, <mark>Non-Political</mark>, <mark>AskIndia</mark>, <mark>Business/Finance</mark>, <mark>Science/Technology</mark>, <mark>Policy/Economy</mark>, <mark>Coronavirus</mark>, <mark>[R]eddiquette</mark>, <mark>Photography</mark>, <mark>Sports</mark>, <mark>Not in English</mark></p>  
+	<p id="flares">Available flares : <mark>Politics</mark>, <mark>Non-Political</mark>, <mark>AskIndia</mark>, <mark>Business/Finance</mark>, <mark>Science/Technology</mark>, <mark>Policy/Economy</mark>, <mark>Coronavirus</mark>, <mark>[R]eddiquette</mark>, <mark>Photography</mark>, <mark>Sports</mark>, <mark>Not in English</mark></p>  
 	<p>Analyzed over 400,000+ Reddit Posts</p>
 	</div>
 More Details about the model : <a href="https://github.com/YatinGupta777/Reddit-flare-detector">Here</a>

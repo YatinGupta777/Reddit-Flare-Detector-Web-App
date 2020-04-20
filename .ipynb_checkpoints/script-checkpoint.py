@@ -82,6 +82,7 @@ def index():
 @app.route('/index',methods = ['POST'])
 def result():
     error = ""
+    flare= ""
     try:
         link = request.form['text']
         flare = FlarePredictor(link)
