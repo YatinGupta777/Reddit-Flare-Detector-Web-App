@@ -10,11 +10,11 @@
 <style type="text/css">
 
 body{
-	background-image: url("reddit-flare-detector.jpg");
 	background-size:     cover;                      
     background-repeat:   no-repeat;
     background-position: center center;  
     color: white;
+    background-color: black;
 }
 .jumbotron{
 	background-color: #000000;
@@ -23,11 +23,15 @@ body{
 #prediction{
 	font-size: 200%;
 }
+img{
+	height:7%;
+	width: 7%;
+}
 }
 </style>
 <body>
 <div class="jumbotron text-center">
-	<h1>Reddit Flair Detector</h1>
+	<h1><img src="https://github.com/YatinGupta777/Reddit-Flare-Detector-Web-App/blob/master/templates/reddit.png?raw=true">Reddit Flair Detector</h1>
 	<p>[ Enter a link to Reddit post (preferably r/india) to predict a flare for it ]</p>
 	<div>
 	  <form action="/index" method="POST">
@@ -41,6 +45,10 @@ body{
 	</div>
 
 </div>
+<div class="container-fluid bg-grey">
+  <h5 align="right">Developed by <a href="https://github.com/YatinGupta777">Yatin Gupta</a></h5>
+</div>
+
 </body>
 
 </html>
