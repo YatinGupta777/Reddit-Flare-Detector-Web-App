@@ -81,9 +81,13 @@ def index():
 
 @app.route('/index',methods = ['POST'])
 def result():
-    link = request.form['text']
-    flare = FlarePredictor(link)
-    return render_template("index.html",prediction=flare)
+    error = ""
+    try:
+        link = request.form['text']
+        flare = FlarePredictor(link)
+    except:
+        error = "Please enter valid input"
+    return render_template("index.html",prediction=flare,error=error)
 
 #print(request, file=sys.stderr)
     
