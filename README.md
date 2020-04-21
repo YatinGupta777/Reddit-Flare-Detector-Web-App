@@ -10,12 +10,8 @@ Analyzed over 400,000+ r/india posts.
 
 Details of ML model used here :
 
-SVM : Parameters : C=1.0, kernel='linear', degree=3, gamma='auto'
-
-11 target variables.
-
-Trained on ~3k Posts per flare
-
-Accuracy : 54%
-
-Performs well on any reddit post, not necessarily r/india.
+1. SVM : Parameters : C=1.0, kernel='linear', degree=3, gamma='auto'
+2. 11 target variables.
+3. Trained on ~3k Posts per flare
+4. Accuracy : 54%
+5. Performs well on any reddit post, not necessarily r/india.
