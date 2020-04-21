@@ -86,6 +86,7 @@ def result():
     try:
         link = request.form['text']
         flare = FlarePredictor(link)
+        flare = flare[0]
     except:
         error = "Please enter valid input"
     return render_template("index.html",prediction=flare,error=error)
@@ -96,15 +97,22 @@ def result():
 def getfile():
     if request.method == 'POST':
         for file in request.files:
-            links = request.files[file].read()
-            #Since a byte sized object is returned
-            links = [links.decode('utf8').strip()]
-            links = links[0].split("\n")
+            links = []
+            try :
+                links = request.files[file].read()
+                #Since a byte sized object is returned
+                links = [links.decode('utf8').strip()]
+                links = links[0].split("\n")
+            except :
+                 links = links
         
         res = dict()
         for i in links:
-            f = FlarePredictor(i)
-            res[i] = f[0]
+            try :
+                f = FlarePredictor(i)
+                res[i] = f[0]
+            except:
+                res[i] = "Invalid link"
         return jsonify(res)
     else:
         return "Flares of all the reddit posts whose links are submitted in txt file in POST request will be sent in response as                  JSON here"
