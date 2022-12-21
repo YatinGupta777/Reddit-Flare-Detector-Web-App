@@ -29,8 +29,9 @@ emoji_pattern = re.compile("["
 
 #creating instance of the class
 app=Flask(__name__)
-my_client_id = "tlaYd7tsDOqvlQ"
-my_client_secret = "xdRqwLkA07r8ScyJZTMsYUndrSA"
+#Present in prod
+my_client_id = ""
+my_client_secret = ""
 my_user_agent = "scrapping r/india"
 reddit = praw.Reddit(client_id=my_client_id, client_secret=my_client_secret, user_agent=my_user_agent)
 encoder = LabelEncoder()
